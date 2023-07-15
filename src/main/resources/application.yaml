@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka
+
+spring:
+  application:
+    name: carshare-gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: carshare-user-service
+          uri: lb://carshare-user-service
+          predicates:
+            - Path=/v1/api/user/**
+        - id: carshare-cars-service
+          uri: lb://carshare-cars-service
+          predicates:
+            - Path=/v1/api/cars/**
