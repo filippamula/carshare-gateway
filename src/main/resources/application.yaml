@@ -22,3 +22,18 @@ spring:
           uri: lb://carshare-cars-service
           predicates:
             - Path=/v1/api/cars/**
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    disable-swagger-default-url: true
+    enabled: true
+    path: /
+    urls:
+      - url: /v1/api/user/api-docs
+        name: carshare-user
+        primaryName: carshare-user
+      - url: /v1/api/cars/api-docs
+        name: carshare-cars
+        primaryName: carshare-cars
