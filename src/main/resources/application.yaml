@@ -5,7 +5,8 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8888/eureka
-    registryFetchIntervalSeconds: 10
+    registry-fetch-interval-seconds: 5
+    eureka-service-url-poll-interval-seconds: 5
 
 spring:
   application:
